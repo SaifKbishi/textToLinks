@@ -1,13 +1,23 @@
 import React,{useContext} from 'react';
-import {linksContext} from '../../linksContext'
+import {linksContext} from '../../linksContext';
+import Link from '@material-ui/core/Link';
 
 const Links = () =>{
-  const {links, setLinks} = useContext(linksContext);
+  const {links, setLinks, clickableLinks, setClickableLinks} = useContext(linksContext);
+  const renderLinks = clickableLinks.map((lnk)=>{
+    return(
+      <>
+      <Link key={lnk.index} href={lnk} target="_blank" rel="noopener">{lnk}</Link><br/>
+      </>
+    );
+  });
 
   return (
-    <div>
-      hello links
-      {links}
+    <div >
+      the links are below: <br/>
+      <p id="allLinks">
+      {renderLinks}  
+      </p>
     </div>
   );
   

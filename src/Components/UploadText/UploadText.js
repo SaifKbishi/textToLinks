@@ -4,16 +4,31 @@ import {linksContext} from '../../linksContext'
 
 const UploadText = ()=>{
   const [localLinks, setLocalLinks] = useState('');
-  const {links, setLinks} = useContext(linksContext);
+  const {links, setLinks, clickableLinks, setClickableLinks} = useContext(linksContext);  
+  const linebreak = '\n';
+  const linksArray = [];
 
   const handleSubmit =(e)=>{
     e.preventDefault();
-    setLinks(localLinks);
+    setLinks(localLinks);  
+    stringToArray(links);
+  }
+
+  const stringToArray= async (linksstring)=>{
+    let stringsArray = linksstring.split(linebreak);
+    
+    await stringsArray.forEach(element => {
+      if(element.length > 0){
+        linksArray.push(element);
+      }      
+    });
+    console.log('25',linksArray)
+    setClickableLinks(linksArray);    
   }
 
   return (
     <>
-    <p>{localLinks}</p>
+    {/* <p>{localLinks}</p> */}
     <form className='textForm' noValidate autoComplete="off">
       <div>
         <TextField 
@@ -22,7 +37,7 @@ const UploadText = ()=>{
           multiline
           minRows={10}
           placeholder="Text Here"
-          maxRows={25}
+          maxRows={10}
           value={localLinks}
           variant="outlined"
           fullWidth

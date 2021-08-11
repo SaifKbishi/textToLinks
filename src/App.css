@@ -52,3 +52,7 @@
 .textForm{
   width: 70%
 }
+#allLinks{
+  text-align: left;
+  margin: 0 150px;
+}
