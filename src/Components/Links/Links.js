@@ -3,7 +3,7 @@ import {linksContext} from '../../linksContext';
 import Link from '@material-ui/core/Link';
 
 const Links = () =>{
-  const {links, setLinks, clickableLinks, setClickableLinks} = useContext(linksContext);
+  const {clickableLinks, setClickableLinks} = useContext(linksContext);
   const renderLinks = clickableLinks.map((lnk)=>{
     return(
       <>

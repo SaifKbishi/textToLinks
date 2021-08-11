@@ -1,5 +1,5 @@
 import React, {useState, useContext} from 'react';
-import { TextField } from '@material-ui/core';
+import { TextField, Button } from '@material-ui/core';
 import {linksContext} from '../../linksContext'
 
 const UploadText = ()=>{
@@ -22,13 +22,11 @@ const UploadText = ()=>{
         linksArray.push(element);
       }      
     });
-    console.log('25',linksArray)
     setClickableLinks(linksArray);    
   }
 
   return (
     <>
-    {/* <p>{localLinks}</p> */}
     <form className='textForm' noValidate autoComplete="off">
       <div>
         <TextField 
@@ -45,7 +43,7 @@ const UploadText = ()=>{
           />
           <br/>
       </div>
-      <button onClick={handleSubmit }>Convert text</button>
+      <Button id="convertBtn" variant="contained" color="primary" onClick={handleSubmit }>Convert text</Button>
     </form>
     </>
   );
