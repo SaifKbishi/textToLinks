@@ -9,8 +9,7 @@ function App() {
   const [clickableLinks, setClickableLinks] = useState([]);
   const {Provider} = linksContext;
 
-  return (
-    document.title = 'Text To Links',
+  return (    
     <div className="App">
       <header className="App-header">     
         <Provider value={{links, setLinks, clickableLinks, setClickableLinks}}>
