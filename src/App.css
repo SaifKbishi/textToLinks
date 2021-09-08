@@ -55,7 +55,7 @@
 #allLinks{
   text-align: left;
   margin: 0 150px;
-  font-size: 20xp;
+  font-size: 20px;
 }
 #convertBtn{
   margin: 10px;
@@ -63,4 +63,7 @@
 
 .jss1.MuiOutlinedInput-notchedOutline{
   border-color: #FFF;;
+}
+.MuiTypography-root{
+  word-break: break-all !important;
 }
